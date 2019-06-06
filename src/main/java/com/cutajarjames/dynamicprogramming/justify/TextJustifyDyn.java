@@ -47,7 +47,7 @@ public class TextJustifyDyn {
 
     public void printTxt(int[] ptrs) {
         int i = 0;
-        while (i < ptrs.length - 1) {
+        while (i < ptrs.length) {
             String[] line = Arrays.copyOfRange(txt, i, ptrs[i]);
             System.out.println(String.join(" ", line));
             i = ptrs[i];
@@ -56,8 +56,9 @@ public class TextJustifyDyn {
 
 
     public static void main(String[] args) {
-        //TextJustifyDyn j = new TextJustifyDyn("The actual Enumeration shall be made within three Years after the first Meeting of the Congress of the United States, and within every subsequent Term of ten Years, in such Manner as they shall by Law direct. The Number of Representatives shall not exceed one for every thirty Thousand, but each State shall have at Least one Representative; and until such enumeration shall be made, the State of New Hampshire shall be entitled to chuse three, Massachusetts eight, Rhode-Island and Providence Plantations one, Connecticut five, New-York six, New Jersey four, Pennsylvania eight, Delaware one, Maryland six, Virginia ten, North Carolina five, South Carolina five, and Georgia three.".split(" "), 67);
-        TextJustifyDyn j = new TextJustifyDyn("Isabel sat on the step".split(" "), 10);
+        TextJustifyDyn j = new TextJustifyDyn("The actual Enumeration shall be made within three Years after the first Meeting of the Congress of the United States, and within every subsequent Term of ten Years, in such Manner as they shall by Law direct. The Number of Representatives shall not exceed one for every thirty Thousand, but each State shall have at Least one Representative; and until such enumeration shall be made, the State of New Hampshire shall be entitled to chuse three, Massachusetts eight, Rhode-Island and Providence Plantations one, Connecticut five, New-York six, New Jersey four, Pennsylvania eight, Delaware one, Maryland six, Virginia ten, North Carolina five, South Carolina five, and Georgia three.".split(" ")
+                , 67);
+        //TextJustifyDyn j = new TextJustifyDyn("Isabel sat on the step".split(" "), 10);
         System.out.println(j.format());
     }
 }

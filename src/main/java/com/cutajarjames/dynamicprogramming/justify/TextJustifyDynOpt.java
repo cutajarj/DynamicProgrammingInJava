@@ -48,7 +48,7 @@ public class TextJustifyDynOpt {
 
     public void printTxt(int[] ptrs) {
         int i = 0;
-        while (i < ptrs.length - 1) {
+        while (i < ptrs.length) {
             String[] line = Arrays.copyOfRange(txt, i, ptrs[i]);
             System.out.println(String.join(" ", line));
             i = ptrs[i];
