@@ -11,7 +11,7 @@ public class StringDistanceTopDown {
     public StringDistanceTopDown(String strA, String strB) {
         this.strA = strA;
         this.strB = strB;
-        this.dist = new int[strA.length()][strB.length()];
+        this.dist = new int[strA.length() + 1][strB.length() + 1];
         for (int[] row : this.dist)
             Arrays.fill(row, -1);
     }
@@ -21,10 +21,10 @@ public class StringDistanceTopDown {
     }
 
     private int distance(int a, int b) {
+        if (this.dist[a][b] != -1) return this.dist[a][b];
+
         if (a == 0) return b;
         if (b == 0) return a;
-
-        if (this.dist[a - 1][b - 1] != -1) return this.dist[a - 1][b - 1];
 
         int replaceCost = strA.charAt(a - 1) == strB.charAt(b - 1) ? 0 : 1;
 
@@ -33,7 +33,7 @@ public class StringDistanceTopDown {
         int costReplace = distance(a - 1, b - 1) + replaceCost;
 
         int minCost = Collections.min(Arrays.asList(costDelete, costInsert, costReplace));
-        this.dist[a - 1][b - 1] = minCost;
+        this.dist[a][b] = minCost;
         return minCost;
     }
 
