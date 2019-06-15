@@ -13,7 +13,7 @@ public class StringDistanceBottomUp {
         this.strB = strB;
         this.dist = new int[strA.length() + 1][strB.length() + 1];
 
-        for (int a = 0; a <= strA.length(); a++)
+        for (int a = 0; a <= strA.length(); a++) {
             for (int b = 0; b <= strB.length(); b++) {
                 if (a == 0) this.dist[a][b] = b;
                 else if (b == 0) this.dist[a][b] = a;
@@ -25,6 +25,8 @@ public class StringDistanceBottomUp {
                     this.dist[a][b] = Collections.min(Arrays.asList(costDelete, costInsert, costReplace));
                 }
             }
+            System.out.println(Arrays.toString(dist[a]));
+        }
     }
 
     public int distance() {
