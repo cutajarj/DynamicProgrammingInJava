@@ -30,6 +30,7 @@ public class StringDistanceOpt {
             int[] temp = distRead;
             distRead = distWrite;
             distWrite = temp;
+            System.out.println(Arrays.toString(distRead));
         }
     }
 
