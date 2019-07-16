@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 public class MaxSubArrayTopDown {
     private int[] prices;
-    private int[] subSolutions;
+    private Integer[] subSolutions;
 
     public MaxSubArrayTopDown(int[] prices) {
         this.prices = prices;
-        subSolutions = new int[prices.length];
-        Arrays.fill(subSolutions, -1);
+        subSolutions = new Integer[prices.length];
+        Arrays.fill(subSolutions, null);
     }
 
     public int maxSubArray() {
@@ -21,7 +21,7 @@ public class MaxSubArrayTopDown {
     }
 
     public int maxSubArrayEndingAt(int i) {
-        if (subSolutions[i] != -1) return subSolutions[i];
+        if (subSolutions[i] != null) return subSolutions[i];
         if (i == 0) return prices[0];
         int max = Math.max(prices[i], maxSubArrayEndingAt(i - 1) + prices[i]);
         subSolutions[i] = max;
