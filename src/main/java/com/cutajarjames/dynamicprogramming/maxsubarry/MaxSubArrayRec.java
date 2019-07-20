@@ -1,5 +1,7 @@
 package com.cutajarjames.dynamicprogramming.maxsubarry;
 
+import java.util.Arrays;
+
 public class MaxSubArrayRec {
     private int[] prices;
 

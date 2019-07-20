@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class MaxSubArrayBottomUp {
     private int[] prices;
-    private int[] subSolutions;
+    private Integer[] subSolutions;
 
     public MaxSubArrayBottomUp(int[] prices) {
         this.prices = prices;
-        subSolutions = new int[prices.length];
+        subSolutions = new Integer[prices.length];
         for (int i = 0; i < prices.length; i++) {
             if (i == 0) subSolutions[i] = prices[0];
             else subSolutions[i] = Math.max(prices[i], subSolutions[i - 1] + prices[i]);
@@ -17,8 +17,8 @@ public class MaxSubArrayBottomUp {
 
     public int maxSubArray() {
         int max = 0;
-        for (int subSolution : subSolutions) {
-            max = Math.max(max, subSolution);
+        for (int j = 0; j < prices.length; j++) {
+            max = Math.max(max, subSolutions[j]);
         }
         return max;
     }
