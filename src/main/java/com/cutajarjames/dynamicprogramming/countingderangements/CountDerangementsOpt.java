@@ -7,15 +7,13 @@ public class CountDerangementsOpt {
     public CountDerangementsOpt(int setSize) {
         this.setSize = setSize;
         long solutionIMinus2 = 0;
-        long solutionIMinus1 = 1;
+        long solutionIMinus1 = 0;
         for (int i = 1; i <= setSize; i++) {
             if (i == 1) solutionI = 0;
             else if (i == 2) solutionI = 1;
-            else {
-                solutionI = (i - 1) * (solutionIMinus1 + solutionIMinus2);
-                solutionIMinus2 = solutionIMinus1;
-                solutionIMinus1 = solutionI;
-            }
+            else solutionI = (i - 1) * (solutionIMinus1 + solutionIMinus2);
+            solutionIMinus2 = solutionIMinus1;
+            solutionIMinus1 = solutionI;
         }
     }
 
