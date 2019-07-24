@@ -2,23 +2,23 @@ package com.cutajarjames.dynamicprogramming.countingderangements;
 
 public class CountDerangementsOpt {
     private int setSize;
-    private long solutionI = 0;
-
+    private long solutionN;
     public CountDerangementsOpt(int setSize) {
         this.setSize = setSize;
-        long solutionIMinus2 = 0;
-        long solutionIMinus1 = 0;
-        for (int i = 1; i <= setSize; i++) {
-            if (i == 1) solutionI = 0;
-            else if (i == 2) solutionI = 1;
-            else solutionI = (i - 1) * (solutionIMinus1 + solutionIMinus2);
-            solutionIMinus2 = solutionIMinus1;
-            solutionIMinus1 = solutionI;
+        long solutionNMinus2 = 0;
+        long solutionNMinus1 = 0;
+        for (int n = 1; n <= setSize; n++) {
+            if (n == 1) solutionN = 0;
+            else if (n == 2) solutionN = 1;
+            else
+                solutionN = (n - 1) * (solutionNMinus1 + solutionNMinus2);
+            solutionNMinus2 = solutionNMinus1;
+            solutionNMinus1 = solutionN;
         }
     }
 
     public long countDerangements() {
-        return solutionI;
+        return solutionN;
     }
 
     public static void main(String args[]) {
