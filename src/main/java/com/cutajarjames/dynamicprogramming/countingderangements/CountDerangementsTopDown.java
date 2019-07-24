@@ -15,13 +15,13 @@ public class CountDerangementsTopDown {
         return countDerangements(setSize);
     }
 
-    private long countDerangements(int i) {
-        if (this.subSolutions[i] != -1) return this.subSolutions[i];
-        if (i == 1) return 0;
-        if (i == 2) return 1;
-        long n = (i - 1) * (countDerangements(i - 1) + countDerangements(i -2));
-        this.subSolutions[i] = n;
-        return n;
+    private long countDerangements(int n) {
+        if (this.subSolutions[n] != -1) return this.subSolutions[n];
+        if (n == 1) return 0;
+        if (n == 2) return 1;
+        long result = (n - 1) * (countDerangements(n - 1) + countDerangements(n - 2));
+        this.subSolutions[n] = result;
+        return result;
     }
 
     public static void main(String args[]) {

@@ -10,10 +10,10 @@ public class CountDerangementsRec {
         return countDerangements(setSize);
     }
 
-    private long countDerangements(int i) {
-        if (i == 1) return 0;
-        if (i == 2) return 1;
-        return (i - 1) * (countDerangements(i - 1) + countDerangements(i -2));
+    private long countDerangements(int n) {
+        if (n == 1) return 0;
+        if (n == 2) return 1;
+        return (n - 1) * (countDerangements(n - 1) + countDerangements(n - 2));
     }
 
     public static void main(String args[]) {
