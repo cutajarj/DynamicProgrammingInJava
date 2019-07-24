@@ -5,15 +5,14 @@ import java.util.Arrays;
 public class CountDerangementsBottomUp {
     private int setSize;
     private long[] subSolutions;
-
     public CountDerangementsBottomUp(int setSize) {
         this.setSize = setSize;
         this.subSolutions = new long[setSize + 1];
-        for (int i = 1; i <= setSize; i++) {
-            if (i == 1) subSolutions[i] = 0;
-            else if (i == 2) subSolutions[i] = 1;
+        for (int n = 1; n <= setSize; n++) {
+            if (n == 1) subSolutions[n] = 0;
+            else if (n == 2) subSolutions[n] = 1;
             else
-                this.subSolutions[i] = (i - 1) * (this.subSolutions[i - 1] + this.subSolutions[i - 2]);
+                subSolutions[n] = (n - 1) * (subSolutions[n - 1] + subSolutions[n - 2]);
         }
     }
 
