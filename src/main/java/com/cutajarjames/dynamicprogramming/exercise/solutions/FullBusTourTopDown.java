@@ -21,7 +21,7 @@ public class FullBusTourTopDown {
 
     private boolean fitsExactly(int len, int c) {
         if (c == 0) return true;
-        if (c < 0 || len == 0) return false;
+        if (len == 0) return false;
         if (this.subSolutions[len][c] != null) return subSolutions[len][c];
         boolean fits = fitsExactly(len - 1, c) ||
                 (c - groupSizes[len - 1] >= 0 && fitsExactly(len - 1, c - groupSizes[len - 1]));
