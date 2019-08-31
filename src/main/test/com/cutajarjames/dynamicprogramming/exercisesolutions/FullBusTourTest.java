@@ -55,6 +55,6 @@ public class FullBusTourTest {
         int[] bookings = new int[500];
         Arrays.fill(bookings, 1);
         boolean result = new FullBusTour(bookings, 500).fitsExactly();
-        Assert.assertTrue("Performance test is failing!", result);
+        Assert.assertTrue("Performance test is failing. Improve your algorithm!", result);
     }
 }
