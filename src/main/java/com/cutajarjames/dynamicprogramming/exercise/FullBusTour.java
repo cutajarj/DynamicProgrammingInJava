@@ -9,19 +9,19 @@ package com.cutajarjames.dynamicprogramming.exercise;
  * More formally:
  * <p>
  * For:
- * A bus with capacity: int c
+ * A bus with capacity: int full_cap
  * A list of group bookings, where each element represents a group size: int groupSizes[]
  * Write a function that returns true iff groupSizes contains a subset that when you sum it up is equal to c.
  * That is from the list of group bookings you can completely fill up a bus
  * <p>
  * Assume:
- * capacity c is greater than 0
+ * capacity full_cap is greater or equal to 0
  * each integer in groupSizes is greater than 0
  * <p>
  * Examples:
- * groupSizes = {4, 13, 5, 12, 6, 1, 8},  c = 11 should return true as subset (5, 6) has a sum of 9
- * groupSizes = {1, 1, 1},  c = 3 should return true as subset (1, 1, 1) has a sum of 3
- * groupSizes = {4, 5, 6, 7},  c = 100 should return false
+ * groupSizes = {4, 13, 5, 12, 6, 1, 8},  full_cap = 11 should return true as subset (5, 6) has a sum of 9
+ * groupSizes = {1, 1, 1},  full_cap = 3 should return true as subset (1, 1, 1) has a sum of 3
+ * groupSizes = {4, 5, 6, 7},  full_cap = 100 should return false
  */
 public class FullBusTour {
     private int[] groupSizes;
