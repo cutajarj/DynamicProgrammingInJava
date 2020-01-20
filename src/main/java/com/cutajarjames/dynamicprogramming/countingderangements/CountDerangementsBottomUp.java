@@ -1,7 +1,5 @@
 package com.cutajarjames.dynamicprogramming.countingderangements;
 
-import java.util.Arrays;
-
 public class CountDerangementsBottomUp {
     private int setSize;
     private long[] subSolutions;
@@ -23,8 +21,7 @@ public class CountDerangementsBottomUp {
     public static void main(String args[]) {
         for (int i = 1; i <= 20; i++)
             System.out.println(new CountDerangementsBottomUp(i).countDerangements());
-
-//        new CountDerangementsTopDown(64).countDerangements();
+//        new CountDerangementsBottomUp(64).countDerangements();
 //        System.out.println("Done");
     }
 }
